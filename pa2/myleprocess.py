@@ -18,7 +18,7 @@ server_ip, server_port = lines[0].split(',')
 client_ip, client_port = lines[1].split(',')
 
 server_port = int(server_port)
-lient_port = int(client_port)
+client_port = int(client_port)
 
 print("server", server_ip, server_port)
 print("client", client_ip, client_port)
@@ -33,3 +33,29 @@ class Message:
             "uuid": str(self.uuid),
             "flag": self.flag
         })
+
+neighbor_conn = None
+
+server_sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+server_sock.setsockopt(socket.SOL_SOCKET, socket.SOREUSEADDR, 1)
+server_sock.bind((server_ip, server_port))
+server_sock.listen(5)
+
+def accept_connection():
+    neighbor_conn, addr = server_sock.accept()
+    print("neighbor connected to server")
+
+threading.Thread(target=accept_connection).start()
+
+client_sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+
+while True:
+    try:
+        client_sock.connect((client_ip, client_port))
+        print("client connected to next node")
+        break
+    except:
+        time.sleep(5)
+
+while neighbor_conn is None:
+    time.sleep(5)
