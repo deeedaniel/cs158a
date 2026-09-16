@@ -1,0 +1,30 @@
+# pa2: LE
+## How To Run Individually
+1. Open 3 terminals
+2. CD into each node directory
+```
+cd node1
+```
+3. Run each file
+```
+python myleprocess.py
+```
+
+## Example output
+Process started: uuid=7d012b7a-3406-498a-93be-98a25e048be1
+
+Sent: uuid=7d012b7a-3406-498a-93be-98a25e048be1, flag=0
+
+Received: uuid=4c977a2d-a09f-47e9-87cd-7749b4375dc4, flag=0, less, 0
+
+Message ignored
+
+Received: uuid=dde73865-e22d-4134-a8c6-e67a1ff01294, flag=0, greater, 0
+
+Sent: uuid=dde73865-e22d-4134-a8c6-e67a1ff01294, flag=0
+
+Received: uuid=dde73865-e22d-4134-a8c6-e67a1ff01294, flag=1, greater, 0
+
+Sent: uuid=dde73865-e22d-4134-a8c6-e67a1ff01294, flag=1
+
+Leader is decided to dde73865-e22d-4134-a8c6-e67a1ff01294.

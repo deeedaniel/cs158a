@@ -16,7 +16,7 @@ id = uuid.uuid4()
 # print("uuid", id)
 write_log(f"Process started: uuid={id}")
 
-file = open("pa2/config.txt")
+file = open("config.txt")
 lines = file.read()
 file.close()
 
