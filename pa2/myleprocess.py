@@ -4,6 +4,7 @@ import threading
 import time
 import uuid
 
+# Helper function to write out logs into a file
 def write_log(text):
     with open("log.txt", "a") as file:
         file.write(text)
@@ -41,6 +42,7 @@ class Message:
             "flag": self.flag
         })
 
+# Set up server socket to accept incoming TCP connection
 neighbor_conn = None
 
 server_sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -55,6 +57,9 @@ def accept_connection():
 
 threading.Thread(target=accept_connection).start()
 
+input("press Eneter when everyone is ready")
+
+# Set up client socket for outgoing connection 
 while True:
     try:
         client_sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -69,6 +74,7 @@ while neighbor_conn is None:
 
 # print("ring formed")
 
+# Once connection has been made, send initial node's UUID
 msg = Message(id)
 msg_json = msg.json()
 
@@ -79,6 +85,7 @@ write_log(f"Sent: uuid={id}, flag=0")
 leader_id = None
 state = 0
 
+# Election loop
 while True:
     data = neighbor_conn.recv(1024)
 
