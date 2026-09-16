@@ -5,7 +5,7 @@ import time
 import uuid
 
 def write_log(text):
-    with open("log.txt", "a") as file:
+    with open("pa2/node3/log3.txt", "a") as file:
         file.write(text)
         file.write("\n")
     print(text)
@@ -15,7 +15,7 @@ id = uuid.uuid4()
 # print("uuid", id)
 write_log(f"Process started: uuid={id}")
 
-file = open("pa2/config.txt")
+file = open("pa2/node3/config.txt")
 lines = file.read()
 file.close()
 

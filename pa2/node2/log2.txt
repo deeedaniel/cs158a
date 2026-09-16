@@ -1,0 +1,7 @@
+Process started: uuid=dde73865-e22d-4134-a8c6-e67a1ff01294
+Sent: uuid=dde73865-e22d-4134-a8c6-e67a1ff01294, flag=0
+Received: uuid=7d012b7a-3406-498a-93be-98a25e048be1, flag=0, less, 0
+Message ignored
+Received: uuid=dde73865-e22d-4134-a8c6-e67a1ff01294, flag=0, same, 0
+Sent: uuid=dde73865-e22d-4134-a8c6-e67a1ff01294, flag=1
+Leader is decided to dde73865-e22d-4134-a8c6-e67a1ff01294.
